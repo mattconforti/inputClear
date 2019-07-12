@@ -2,10 +2,11 @@ function clearInput() {
     /* TODO: get every input field element
              get either the innerHTML** or textContent of those elements
              set the text to None or empty string
-             set the button label to 'cleared'
-             when new text is input, set button back to 'clear'
+             make the button non-clickable
+             when new text is input, set button back to 'clear' and make clickable
     */
-    document.write(document.getElementById("clear_button").innerHTML)
+    let inputElems = document.getElementsByClassName("usr_in")
+    document.getElementById("clear_button").textContent = "cleared"
 }
 
 var buttonElem = document.getElementById("clear_button");
