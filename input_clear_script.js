@@ -1,16 +1,17 @@
 function clearInput() {
-    /* TODO: get every input field element
-             get either the innerHTML** or textContent of those elements
-             set the text to None or empty string
-             make the button non-clickable
+    /* TODO: make the button non-clickable upon being cleared
              when new text is input, set button back to 'clear' and make clickable
     */
-    let inputElems = document.getElementsByClassName("usr_in");
-    for (let item of inputElems) {  // for item of...
-        item.textContent = ""
+    let inputElems = document.getElementsByClassName("usr_in");  // get each input element
+    for (var i = 0; i < inputElems.length; i++) {
+        inputElems[i].value = "";  // set this elems value to empty string
     }
+}
+
+function changeButton() {
     document.getElementById("clear_button").textContent = "cleared";
 }
 
 var buttonElem = document.getElementById("clear_button");
-buttonElem.addEventListener("click", clearInput, false);
+buttonElem.addEventListener("click", clearInput, false);  // clearInput on button click
+buttonElem.addEventListener("click", changeButton, false);  // changeButton on button click
